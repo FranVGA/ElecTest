@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48EB4664-A3E2-4302-9CB9-7EE8936F3A46}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ElecTest</RootNamespace>
+    <AssemblyName>ElecTest</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NationalInstruments.Common, Version=19.1.40.49152, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.DAQmx, Version=23.8.45.49349, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormsConfig\NodeConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsConfig\NodeConfig.Designer.cs">
+      <DependentUpon>NodeConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsConfig\MenuAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsConfig\MenuAdd.Designer.cs">
+      <DependentUpon>MenuAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsConfig\SCPICOMMAND.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsConfig\SCPICOMMAND.Designer.cs">
+      <DependentUpon>SCPICOMMAND.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sequence_debugging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sequence_debugging.Designer.cs">
+      <DependentUpon>Sequence_debugging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UIl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UIl.Designer.cs">
+      <DependentUpon>UIl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormsConfig\NodeConfig.resx">
+      <DependentUpon>NodeConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsConfig\MenuAdd.resx">
+      <DependentUpon>MenuAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsConfig\SCPICOMMAND.resx">
+      <DependentUpon>SCPICOMMAND.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sequence_debugging.resx">
+      <DependentUpon>Sequence_debugging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UIl.resx">
+      <DependentUpon>UIl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nodos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pausa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planificacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planificacion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicional.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cronologia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multimetro-digital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\herramientas-para-reparar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apagar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\encender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verificado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cargando.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
